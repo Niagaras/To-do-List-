@@ -9,20 +9,22 @@ export default function TodoList() {
     if(isPending) return <p>Loading...</p>;
     if(isError) return <p>Something went wrong</p>;
   return (
-    <div className={classes.list}>
-        {
-            data?.map((item: Todo) =>
-               item.completed ?  (<TodoTask key={item.id} todo= {item}/>  
-            ) : null
-        )
-        }  
-                {
-            data?.map((item: Todo) =>
-               !item.completed ?  (<TodoTask key={item.id} todo= {item}/>  
-            ) : null
-        )
-        }  
-    </div>
-
+        <> 
+           <div className={classes.list}>
+            {
+                data?.map((item: Todo) =>
+                item.completed ?  (<TodoTask key={item.id} todo= {item}/>  
+                ) : null
+            )
+            }  
+                    {
+                data?.map((item: Todo) =>
+                !item.completed ?  (<TodoTask key={item.id} todo= {item}/>  
+                ) : null
+            )
+            }  
+            <button type="button" className={classes.btn}>Load More</button>
+        </div>
+    </>
   )
 }

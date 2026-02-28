@@ -6,4 +6,11 @@ export const useTodoListStyles = createUseStyles({
         borderRadius: 6,
         overflow: 'hidden',
   },
+    btn:{
+        border: 'none',
+        outline: 'none',
+        backgroundColor: '#fff',
+        fontSize: 16,
+        cursor: 'pointer'
+    }
 })
