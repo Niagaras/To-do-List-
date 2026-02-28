@@ -1,15 +1,20 @@
+import type { Todo } from '../../models';
 import { useTodoTaskStyles } from './TodoTask.styles';
 
-export default function TodoTask() {
+interface Props {
+    todo : Todo;
+}
+
+export default function TodoTask({todo} : Props) {
     const classes = useTodoTaskStyles();
   return (
-    <div className={classes.box}>
+    <div className={classes.box} key={todo.id}>
         <div style={{display: 'flex'}}>
             <div className={classes.radio}>
-                <input type="checkbox" />
+                <input type="checkbox"  checked={todo.completed}/>
             </div>
             <div>
-                Read for 1 hour
+               {todo.todo}
             </div>            
         </div>
         <div>
