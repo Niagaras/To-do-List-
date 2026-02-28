@@ -11,9 +11,16 @@ export default function TodoList() {
   return (
     <div className={classes.list}>
         {
-            data?.map((item: Todo) => (
-                <TodoTask key={item.id} todo= {item}/>  
-            ))
+            data?.map((item: Todo) =>
+               item.completed ?  (<TodoTask key={item.id} todo= {item}/>  
+            ) : null
+        )
+        }  
+                {
+            data?.map((item: Todo) =>
+               !item.completed ?  (<TodoTask key={item.id} todo= {item}/>  
+            ) : null
+        )
         }  
     </div>
 
